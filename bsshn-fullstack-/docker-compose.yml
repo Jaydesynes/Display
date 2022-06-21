@@ -1,0 +1,17 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    image: bssh-backend
+    ports:
+      - "5000:5000"
+      - "27017:27017"
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    image: bssh-client
+    ports:
+      - "80:80"
+    # network_mode: "host"

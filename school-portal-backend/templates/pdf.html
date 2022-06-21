@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            font-size: 0.97em;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        .top {
+           display: flex;
+            justify-content: space-between;
+        }
+
+
+        hr {
+            margin-top: 1em;
+        }
+
+        img {
+            height: 200px;
+            width: 180px;
+        }
+
+        .result-section {
+            display: flex;
+        }
+        .jamb {
+            margin-left: 3em;
+        }
+        @page { size: A; margin: 1cm }
+
+    </style>
+
+</head>
+<body>
+    <h1> School Application Data </h1>
+    <div class="top">
+
+        <div>
+            
+        
+    
+            <h3>Your application details</h3>
+        
+    
+            <p>Name : {{ firstname }} {{ surname }} </p>
+            <p>Phone : {{ phone }}</p>
+            <p>email : {{ email}}</p>
+            <p>gender: {{ biodata['gender'] }}</p>
+    
+           
+        </div>
+    
+    
+        <div class="img-div">
+            <img src="{{ url_for('static', filename=img) }}" >
+        </div>
+
+    </div>
+    
+    <div>
+        <hr>
+        <h3>Biodata</h3>
+            <p>Date of birth : {{ biodata['DOB'] }}</p> 
+            <p>State of Origin: {{ biodata['state'] }}</p>
+            <p>Local Government Area: {{ biodata['lga'] }}</p>
+            <p>Home Address: {{ biodata['home_address'] }}</p>
+            <p>Parent Name: {{ biodata['parent_first_name'] }} {{ biodata['parent_last_name'] }}</p>
+            <p>Parent Address: {{ biodata['parent_address'] }}</p>
+            <p>Parent Occupation: {{ biodata['parent_occupation'] }}</p>
+            
+    </div>
+
+    <hr>
+    <h3>O Level results</h3>
+    <div class="result-section"> 
+        <div class="waec-neco">
+            <h4>{{ exam}}</h4>
+            {% for subject in olevel_result[exam] %}
+                <p>{{ subject }} -  {{ olevel_result[exam][subject] }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="jamb">
+            <h4>JAMB</h4>
+        {% for course in jamb %}
+
+            <p>{{ course }} -  {{ jamb[course] }}</p>
+            
+        {% endfor %}
+
+        </div>
+        
+
+    </div>
+
+</body>
+</html>

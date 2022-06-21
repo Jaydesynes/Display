@@ -1,0 +1,377 @@
+:root {
+  --primary-color: rgb(27, 2, 138);
+  --btn-hover-color: rgb(91, 62, 219);
+  --color-white: white;
+  --field-color: rgb(218, 218, 218);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  /* background: url('/src/images/luke-chesser-eICUFSeirc0-unsplash.jpg'); */
+  background-size: cover;
+  background-color: var(--color-white);
+  overflow-y: 0em;
+  overflow-x: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
+.tops {
+  margin: 2em 0 0 0;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0 1em 0;
+  overflow-x: hidden;
+  margin-bottom: 0em;
+}
+
+.heading::before { 
+  content: "";
+  position: absolute;
+  height: 0.2em;
+  width: 1em;
+  top: 5em;
+  bottom: 0;
+  border-radius: 1em;
+  background-color: var(--primary-color);
+  margin-left: 0;
+}
+
+/* header .logo {
+  margin: 0 0 0 2rem;
+} */
+
+.head-title {
+  margin-left: -2em;
+}
+
+.form-container {
+  /* margin: em 0 0 0; */
+  width: 60%;
+  margin: 0vh 20% 0 20%;
+  max-width: 24em;
+}
+
+.heading , .login-heading{
+  font-size: 1.4em;
+  font-weight: bold;
+  color: var(--primary-color); 
+}
+
+.field {
+  width :100%;
+  height: 3em;
+  margin: 0 0 0.9em 0;
+  border: 0px;
+  padding-left: 1em;
+  background-color: var(--field-color);
+  
+}
+
+.submit {
+  width: 70%;
+  height: 3em;
+  border: 0;
+  color: var(--color-white);
+  background-color: var(--primary-color);
+  margin: 0 20% 0 20%;
+  border-radius: 3px;
+}
+
+
+.form-container label{
+  font-size: 0.8rem;
+  margin: 0 0 0.1em 0;
+}
+
+.login-btn {
+  color: var(--color-white);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  width: 5em;
+  padding: 0.7em;
+  margin: 0 1em 0 0 ;
+  position: relative;
+  right: 0.02em;
+  top: -0.7em;
+
+}
+
+.submit:hover, .login-btn:hover {
+  background-color: var(--btn-hover-color);
+}
+
+footer {
+  position: sticky;
+  width: 100vw;
+  margin: 4em 0 0vh 0;
+  display: flex;
+  height: auto;
+}
+
+.powered {
+  padding: 1em;
+  color:  var(--primary-color);
+  font-size: 0.7em;
+}
+
+
+/* Dashboard */
+.dashboard {
+  height: inherit;
+}
+.dashboard-page {
+  height: 100%;
+}
+.dash-container {
+  height: 100%;
+  display: flex;
+  
+}
+
+.menu {
+  position: fixed;
+  display: block;
+  background-color: var(--primary-color);
+  width: 60vw;
+  max-width: 200px;
+  height: 100%;
+  transform: translateX(-100%);
+  text-transform: uppercase;
+  transition: transform .5s ease-in-out;
+  z-index: 999;
+
+}
+
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 500;
+  background: #043b5f79;
+  top: 0;
+  transition: transform .5s ease-in-out;
+}
+.open-nav {
+  transform: translateX(0%) !important;
+}
+.close-icon{
+  display: block;
+  position:relative;
+  height: 2em;
+  width: 2em;
+  left: 9em;
+  color: var(--color-white);
+  margin-top: 1em;
+}
+.active-tab{
+  background-color: var(--btn-hover-color);
+}
+
+.menu-icon {
+  color: var(--primary-color);
+  margin-top: -2em;
+  height: 2em;
+  width: 2em;
+
+}
+
+.menu-icon:hover {
+  size: 29px;
+}
+
+nav ul {
+  margin-left: 0em;
+  padding: 3em 0 0 0 ;
+}
+
+nav ul li {
+  list-style: none;
+  padding: 1em;
+  font-size: 0.9em;
+  margin: 0.1em;
+}
+
+nav ul li:hover {
+  background-color: var(--btn-hover-color);
+  cursor: pointer;
+}
+
+nav ul li p {
+  color: var(--color-white);
+  font-size: 1em;
+  margin: 0.5em;
+}
+
+.user-welcome {
+  color: var(--color-white);
+  margin-left: 1em;
+  margin-top: 2em;
+ 
+}
+
+.views {
+  /* height: 90vh  ; */
+  width: 100%;
+  overflow-y: auto;
+  margin-left: 2em;
+
+}
+
+.result-item {
+  display: flex;
+  margin: 1em;
+  margin-left: 1em;
+}
+
+/* select programs */
+.programs-comp{
+  display: block;
+  margin-inline: auto;
+  
+}
+.course-submit {
+  width: fit-content !important;
+  margin-left: 1em !important;
+}
+
+
+.waec select {
+  width: 2em;
+}
+
+option {
+  width: 6em;
+  font-size: 1.5em;
+}
+
+select {
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 20em;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  padding-left: 2em;
+}
+
+.grade {
+  margin-left: 1em;
+}
+
+.result-comp {
+  margin-left: 5em;
+}
+
+.centered {
+  text-align: center;
+}
+
+.result-btn {
+  width: 10em !important;
+  margin-top: 2em !important;
+  height: 4em;
+  
+}
+
+
+
+/* login */
+.login-form{
+  margin-top: 5em;
+}
+
+.login-heading::before {
+  content: "";
+  position: absolute;
+  height: 0.2em;
+  width: 1em;
+  top: 7.8em;
+  bottom: 0;
+  border-radius: 1em;
+  background-color: var(--primary-color);
+  margin-left: 0;
+}
+
+/* paystack */
+.paystack-btn {
+  background-color: rgb(4, 70, 87);
+  height: 3em;
+  color:var(--color-white);
+  border-radius: 3px;
+  margin-left: 1em;
+}
+
+.paystack-btn:hover {
+  background-color: rgb(40, 94, 209);
+}
+
+/* biodata */
+.biodata-img{
+  width: 15em;
+  margin: 1em;
+}
+.biodata-submit{
+  width: 6em !important;
+  margin-left: 1em !important;
+}
+
+.print {
+  background-color: var(--primary-color);
+  color: var(--color-white);
+  border: none ;
+  float: right;
+  margin-right: 5em;
+}
+.print:hover {
+  background-color: var(--btn-hover-color);
+}
+
+/* bigger screens */
+@media only screen and  (min-width: 700px){
+
+  .form-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .login-btn {
+    margin: 0 5em 0 0;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+  .close-icon{
+   display: none;
+  }
+
+  .icon-div {
+    height: 0.5em;
+  }
+
+  .menu {
+    transform: translateX(0);
+    position: unset;
+    /* display: none !important; */
+  }
+
+
+
+
+
+}

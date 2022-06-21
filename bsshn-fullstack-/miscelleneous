@@ -1,0 +1,12 @@
+ # this part deletes patient from the queue
+        user_found = users.find_one({'_id':user})
+        patients_queued = user_found["patients"]
+        print(patients_queued)
+        user_found["patients"].remove(patientId)
+        print(patients_queued)
+        users.update_one({"_id": user}, {
+                        "$set": {"patients": patients_queued}})
+
+
+invoices.update_one({"_id": invoice}, {
+                            "$set": {"services.pharmacy": 1}})
